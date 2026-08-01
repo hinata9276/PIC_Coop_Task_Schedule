@@ -1,50 +1,109 @@
-## Program Overview
+# PIC16F877A Cooperative Task Scheduler (Assembly)
 
-This program demonstrates a **cooperative task scheduler** implemented entirely in PIC Assembly language. Instead of executing all functions sequentially, the firmware uses **Timer0** to generate periodic interrupts that serve as a system heartbeat. The interrupt service routine (ISR) performs only lightweight operations: it reloads the timer, updates software counters, and sets timing flags (METRO flags) when predefined intervals have elapsed.
+This project demonstrates how a **cooperative task scheduler** can be implemented entirely in **PIC16F877A Assembly language**, using **Timer0** as the system tick. It is intended as an educational example to help students understand timer peripherals, interrupt-driven programming, and modular firmware architecture without relying on an RTOS.
 
-The **main loop** continuously checks these timing flags and executes the corresponding task when a flag is set. Each task performs its operation quickly, clears its own flag, and returns immediately, allowing other scheduled tasks to run. This design avoids long blocking delays and enables multiple periodic functions to share the processor efficiently.
+## Overview
 
-### Program Structure
+Instead of executing every function sequentially, the firmware uses **Timer0 interrupts** to generate a periodic system heartbeat. The Interrupt Service Routine (ISR) performs only lightweight operations:
 
-* **Configuration & Variable Declaration**
+* Reload Timer0
+* Update software timing counters
+* Set scheduling flags (METRO flags)
+* Return immediately
 
-  * Configure the microcontroller, oscillator, peripherals, and declare global variables.
+The **main loop** continuously checks these scheduling flags and executes the corresponding task when its time slot arrives. Each task runs quickly, clears its flag, and returns control to the scheduler.
 
-* **Lookup Tables**
+This design allows multiple periodic tasks to execute at different frequencies while maintaining a responsive system.
 
-  * Store constant data such as 7-segment display patterns and keypad lookup tables using `RETLW` instructions for compact and efficient access.
+## Features
 
-* **Interrupt Service Routine (ISR)**
+* Timer0 interrupt-based software scheduler
+* Cooperative multitasking
+* Multiple software timers (e.g. 4 ms, 20 ms, 40 ms, 100 ms, 400 ms, 1 s)
+* Modular driver architecture
+* 7-segment display driver
+* Matrix keypad scanning
+* ADC interface
+* Binary-to-decimal conversion
+* 16-bit arithmetic library (`ADD16`, `SUB16`, `MUL16`)
+* Lookup tables using `RETLW`
 
-  * Save CPU context.
-  * Reload Timer0.
-  * Update software timing counters.
-  * Set METRO flags when each timing interval expires.
-  * Restore CPU context and return immediately.
+## Firmware Architecture
 
-* **Main Loop (Scheduler)**
+```text
+                Timer0 Interrupt
+                       │
+                       ▼
+              Interrupt Service Routine
+          ┌──────────────────────────────┐
+          │ Save CPU Context             │
+          │ Reload Timer0                │
+          │ Update Software Counters     │
+          │ Set METRO_xxx Flags          │
+          │ Restore CPU Context          │
+          └──────────────────────────────┘
+                       │
+                    RETFIE
+                       │
+                       ▼
+                 Main Program Loop
+                       │
+        ┌──────────────┼──────────────┐
+        ▼              ▼              ▼
+    METRO_20MS     METRO_100MS    METRO_1S
+        │              │              │
+        ▼              ▼              ▼
+ Display Task     Keypad Task    Background Task
+```
 
-  * Continuously polls the METRO flags.
-  * Executes only the tasks whose flags are set.
-  * Clears the flag after completing each task.
+## Project Structure
 
-* **Application Tasks**
+```text
+├── Configuration Bits
+├── Variable Declaration (CBLOCK)
+├── Constants (EQU)
+├── Reset & Interrupt Vectors
+├── Lookup Tables
+├── Interrupt Service Routine (ISR)
+├── System Initialization
+├── Main Scheduler Loop
+├── Periodic Tasks
+├── Peripheral Drivers
+└── Utility Libraries
+```
 
-  * Each task has a dedicated execution period (e.g., 20 ms, 40 ms, 100 ms, 400 ms, 1 s).
-  * Examples include LED control, keypad scanning, display refresh, and counter updates.
+## Design Philosophy
 
-* **Driver & Utility Routines**
+This project follows several embedded software best practices:
 
-  * Reusable modules such as ADC, keypad scanning, 7-segment display, binary-to-decimal conversion, arithmetic functions (`ADD16`, `SUB16`, `MUL16`), and delay routines.
+* Keep the ISR short and deterministic.
+* Perform application processing in the main loop.
+* Schedule tasks using software timers instead of blocking delay loops.
+* Separate hardware drivers from application logic.
+* Organize code into reusable modules.
+* Use lookup tables to improve efficiency and readability.
 
-### Design Philosophy
+Although implemented entirely in Assembly language, the architecture resembles the core principles of a **Real-Time Operating System (RTOS)**:
 
-This program demonstrates several good embedded software practices:
+* **Interrupt** → System tick
+* **METRO flags** → Task events
+* **Main loop** → Cooperative scheduler
+* **Tasks** → Independent application modules
 
-* Keep the interrupt service routine **short and deterministic**.
-* Perform application processing in the **main loop**, not inside the ISR.
-* Divide the program into **small, modular tasks** with a single responsibility.
-* Schedule tasks using **software timers** instead of blocking delay loops.
-* Organize code into reusable libraries to improve readability, debugging, and maintenance.
+## Learning Objectives
 
-Although simple, this architecture resembles the design philosophy of a **Real-Time Operating System (RTOS)**. The ISR acts as the system timer (tick), while the main loop behaves as a cooperative scheduler that dispatches periodic tasks based on software timing events.
+This project is suitable for students learning:
+
+* PIC Assembly Programming
+* Interrupt Handling
+* Timer Peripherals
+* Software Timing
+* Cooperative Scheduling
+* Modular Embedded Software Design
+* Real-Time Embedded Systems
+
+It bridges the gap between basic Assembly programming and RTOS concepts, demonstrating how multiple independent tasks can coexist on a resource-constrained microcontroller without an operating system.
+
+## License
+
+This project is intended for educational purposes. Feel free to use, modify, and adapt it for teaching, learning, or personal projects.
