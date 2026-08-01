@@ -1,0 +1,188 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Sat Aug 01 00:22:46 2026
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x00045a
+       .config_2007_ADC.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x000230      
+                            0x002007    0x002007      
+            561 out of 8454 program addresses used, program memory utilization is 6%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                      ADC   0x0000fd    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    ADD16   0x0001d2    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  BIN2DEC   0x000124    program     static C:\Users\User\Documents\ADC\ADC.asm
+                CharTable   0x000005    program     static C:\Users\User\Documents\ADC\ADC.asm
+               DEBOUNCING   0x000199    program     static C:\Users\User\Documents\ADC\ADC.asm
+          DECREMENT_COUNT   0x0001c5    program     static C:\Users\User\Documents\ADC\ADC.asm
+               DELAY500MS   0x0000d9    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 EXIT_ISR   0x000054    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 FINALIZE   0x0000d8    program     static C:\Users\User\Documents\ADC\ADC.asm
+       FINALIZE_KEY_INPUT   0x000198    program     static C:\Users\User\Documents\ADC\ADC.asm
+                   Finish   0x00015e    program     static C:\Users\User\Documents\ADC\ADC.asm
+                GET_INPUT   0x000186    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  Get7Seg   0x0000e4    program     static C:\Users\User\Documents\ADC\ADC.asm
+                   GetKey   0x0000e7    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 HundLoop   0x00014d    program     static C:\Users\User\Documents\ADC\ADC.asm
+                HundStage   0x000148    program     static C:\Users\User\Documents\ADC\ADC.asm
+          INCREMENT_COUNT   0x0001b8    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 INTF_ISR   0x00002d    program     static C:\Users\User\Documents\ADC\ADC.asm
+                      ISR   0x000027    program     static C:\Users\User\Documents\ADC\ADC.asm
+             KEYPAD_INPUT   0x000166    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 KeyTable   0x000016    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    LFSR8   0x0001a1    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    LOOP1   0x0000dd    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    LOOP2   0x0000db    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  LOOP_10   0x0001f7    program     static C:\Users\User\Documents\ADC\ADC.asm
+                MAIN_LOOP   0x000085    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    MUL16   0x0001ff    program     static C:\Users\User\Documents\ADC\ADC.asm
+  MUL16_ADD_STORE_PARTIAL   0x00022b    program     static C:\Users\User\Documents\ADC\ADC.asm
+                MUL16_FIN   0x000224    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S0   0x000203    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S1   0x000208    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S2   0x00020c    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S3   0x000210    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S4   0x000214    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S5   0x000218    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S6   0x00021c    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S7   0x000220    program     static C:\Users\User\Documents\ADC\ADC.asm
+            MUL16_SHIFT_A   0x000225    program     static C:\Users\User\Documents\ADC\ADC.asm
+                MUL_BY_10   0x0001f3    program     static C:\Users\User\Documents\ADC\ADC.asm
+               ON_SEGMENT   0x000161    program     static C:\Users\User\Documents\ADC\ADC.asm
+               POOL_100MS   0x000045    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  POOL_1S   0x00004f    program     static C:\Users\User\Documents\ADC\ADC.asm
+                POOL_20MS   0x00003b    program     static C:\Users\User\Documents\ADC\ADC.asm
+               POOL_400MS   0x00004a    program     static C:\Users\User\Documents\ADC\ADC.asm
+                POOL_40MS   0x000040    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 POOL_4MS   0x000036    program     static C:\Users\User\Documents\ADC\ADC.asm
+              PROCESS_KEY   0x00018a    program     static C:\Users\User\Documents\ADC\ADC.asm
+        PROCESS_KEY_VALUE   0x000093    program     static C:\Users\User\Documents\ADC\ADC.asm
+          RECOVER_CONTEXT   0x0000f0    program     static C:\Users\User\Documents\ADC\ADC.asm
+            ROTATE_DELAY1   0x00019f    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 ROT_LEFT   0x0000ce    program     static C:\Users\User\Documents\ADC\ADC.asm
+                ROT_RIGHT   0x0000d2    program     static C:\Users\User\Documents\ADC\ADC.asm
+             SAVE_CONTEXT   0x0000ea    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  SCAN_L2   0x00016e    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  SCAN_L3   0x000176    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  SCAN_L4   0x00017e    program     static C:\Users\User\Documents\ADC\ADC.asm
+               SET_NO_KEY   0x000196    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    START   0x000056    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    SUB16   0x0001e2    program     static C:\Users\User\Documents\ADC\ADC.asm
+                   T0_ISR   0x000033    program     static C:\Users\User\Documents\ADC\ADC.asm
+               TASK_100MS   0x0000c3    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  TASK_1S   0x0000d5    program     static C:\Users\User\Documents\ADC\ADC.asm
+                TASK_20MS   0x000089    program     static C:\Users\User\Documents\ADC\ADC.asm
+               TASK_400MS   0x0000c7    program     static C:\Users\User\Documents\ADC\ADC.asm
+                TASK_40MS   0x0000bf    program     static C:\Users\User\Documents\ADC\ADC.asm
+           TASK_DISP_HUND   0x00010d    program     static C:\Users\User\Documents\ADC\ADC.asm
+           TASK_DISP_ONES   0x00011d    program     static C:\Users\User\Documents\ADC\ADC.asm
+        TASK_DISP_SEGMENT   0x000105    program     static C:\Users\User\Documents\ADC\ADC.asm
+           TASK_DISP_TENS   0x000115    program     static C:\Users\User\Documents\ADC\ADC.asm
+             TASK_EXT_INT   0x000031    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  TenLoop   0x000157    program     static C:\Users\User\Documents\ADC\ADC.asm
+              TenThouLoop   0x00012d    program     static C:\Users\User\Documents\ADC\ADC.asm
+                TensStage   0x000156    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 ThouLoop   0x00013f    program     static C:\Users\User\Documents\ADC\ADC.asm
+                ThouStage   0x000136    program     static C:\Users\User\Documents\ADC\ADC.asm
+             UPDATE_PORTB   0x0000f7    program     static C:\Users\User\Documents\ADC\ADC.asm
+                     WAIT   0x0000fe    program     static C:\Users\User\Documents\ADC\ADC.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                CharTable   0x000005    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 KeyTable   0x000016    program     static C:\Users\User\Documents\ADC\ADC.asm
+                      ISR   0x000027    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 INTF_ISR   0x00002d    program     static C:\Users\User\Documents\ADC\ADC.asm
+             TASK_EXT_INT   0x000031    program     static C:\Users\User\Documents\ADC\ADC.asm
+                   T0_ISR   0x000033    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 POOL_4MS   0x000036    program     static C:\Users\User\Documents\ADC\ADC.asm
+                POOL_20MS   0x00003b    program     static C:\Users\User\Documents\ADC\ADC.asm
+                POOL_40MS   0x000040    program     static C:\Users\User\Documents\ADC\ADC.asm
+               POOL_100MS   0x000045    program     static C:\Users\User\Documents\ADC\ADC.asm
+               POOL_400MS   0x00004a    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  POOL_1S   0x00004f    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 EXIT_ISR   0x000054    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    START   0x000056    program     static C:\Users\User\Documents\ADC\ADC.asm
+                MAIN_LOOP   0x000085    program     static C:\Users\User\Documents\ADC\ADC.asm
+                TASK_20MS   0x000089    program     static C:\Users\User\Documents\ADC\ADC.asm
+        PROCESS_KEY_VALUE   0x000093    program     static C:\Users\User\Documents\ADC\ADC.asm
+                TASK_40MS   0x0000bf    program     static C:\Users\User\Documents\ADC\ADC.asm
+               TASK_100MS   0x0000c3    program     static C:\Users\User\Documents\ADC\ADC.asm
+               TASK_400MS   0x0000c7    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 ROT_LEFT   0x0000ce    program     static C:\Users\User\Documents\ADC\ADC.asm
+                ROT_RIGHT   0x0000d2    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  TASK_1S   0x0000d5    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 FINALIZE   0x0000d8    program     static C:\Users\User\Documents\ADC\ADC.asm
+               DELAY500MS   0x0000d9    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    LOOP2   0x0000db    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    LOOP1   0x0000dd    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  Get7Seg   0x0000e4    program     static C:\Users\User\Documents\ADC\ADC.asm
+                   GetKey   0x0000e7    program     static C:\Users\User\Documents\ADC\ADC.asm
+             SAVE_CONTEXT   0x0000ea    program     static C:\Users\User\Documents\ADC\ADC.asm
+          RECOVER_CONTEXT   0x0000f0    program     static C:\Users\User\Documents\ADC\ADC.asm
+             UPDATE_PORTB   0x0000f7    program     static C:\Users\User\Documents\ADC\ADC.asm
+                      ADC   0x0000fd    program     static C:\Users\User\Documents\ADC\ADC.asm
+                     WAIT   0x0000fe    program     static C:\Users\User\Documents\ADC\ADC.asm
+        TASK_DISP_SEGMENT   0x000105    program     static C:\Users\User\Documents\ADC\ADC.asm
+           TASK_DISP_HUND   0x00010d    program     static C:\Users\User\Documents\ADC\ADC.asm
+           TASK_DISP_TENS   0x000115    program     static C:\Users\User\Documents\ADC\ADC.asm
+           TASK_DISP_ONES   0x00011d    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  BIN2DEC   0x000124    program     static C:\Users\User\Documents\ADC\ADC.asm
+              TenThouLoop   0x00012d    program     static C:\Users\User\Documents\ADC\ADC.asm
+                ThouStage   0x000136    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 ThouLoop   0x00013f    program     static C:\Users\User\Documents\ADC\ADC.asm
+                HundStage   0x000148    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 HundLoop   0x00014d    program     static C:\Users\User\Documents\ADC\ADC.asm
+                TensStage   0x000156    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  TenLoop   0x000157    program     static C:\Users\User\Documents\ADC\ADC.asm
+                   Finish   0x00015e    program     static C:\Users\User\Documents\ADC\ADC.asm
+               ON_SEGMENT   0x000161    program     static C:\Users\User\Documents\ADC\ADC.asm
+             KEYPAD_INPUT   0x000166    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  SCAN_L2   0x00016e    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  SCAN_L3   0x000176    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  SCAN_L4   0x00017e    program     static C:\Users\User\Documents\ADC\ADC.asm
+                GET_INPUT   0x000186    program     static C:\Users\User\Documents\ADC\ADC.asm
+              PROCESS_KEY   0x00018a    program     static C:\Users\User\Documents\ADC\ADC.asm
+               SET_NO_KEY   0x000196    program     static C:\Users\User\Documents\ADC\ADC.asm
+       FINALIZE_KEY_INPUT   0x000198    program     static C:\Users\User\Documents\ADC\ADC.asm
+               DEBOUNCING   0x000199    program     static C:\Users\User\Documents\ADC\ADC.asm
+            ROTATE_DELAY1   0x00019f    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    LFSR8   0x0001a1    program     static C:\Users\User\Documents\ADC\ADC.asm
+          INCREMENT_COUNT   0x0001b8    program     static C:\Users\User\Documents\ADC\ADC.asm
+          DECREMENT_COUNT   0x0001c5    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    ADD16   0x0001d2    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    SUB16   0x0001e2    program     static C:\Users\User\Documents\ADC\ADC.asm
+                MUL_BY_10   0x0001f3    program     static C:\Users\User\Documents\ADC\ADC.asm
+                  LOOP_10   0x0001f7    program     static C:\Users\User\Documents\ADC\ADC.asm
+                    MUL16   0x0001ff    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S0   0x000203    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S1   0x000208    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S2   0x00020c    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S3   0x000210    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S4   0x000214    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S5   0x000218    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S6   0x00021c    program     static C:\Users\User\Documents\ADC\ADC.asm
+                 MUL16_S7   0x000220    program     static C:\Users\User\Documents\ADC\ADC.asm
+                MUL16_FIN   0x000224    program     static C:\Users\User\Documents\ADC\ADC.asm
+            MUL16_SHIFT_A   0x000225    program     static C:\Users\User\Documents\ADC\ADC.asm
+  MUL16_ADD_STORE_PARTIAL   0x00022b    program     static C:\Users\User\Documents\ADC\ADC.asm
+
+
